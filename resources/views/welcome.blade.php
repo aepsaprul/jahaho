@@ -9,10 +9,17 @@
   <link rel="shortcut icon" href="{{ asset('assets/logo.png') }}" type="image/x-icon">
 
   <!-- css -->
+  <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Abel';font-size: 22px;
+    }
+  </style>
 </head>
 <body>
+  {{-- header --}}
   <div id="header">
     <div class="container">
       <div class="logo">
@@ -34,15 +41,40 @@
       </div>
     </div>
   </div>
+  {{-- slider --}}
   <div id="slider">
-    <div class="container">
-      <img src="assets/slider-50.png" alt="slider-1">
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <picture>
+          <source media="(min-width: 1200px)" srcset="assets/100%.jfif">
+          <source media="(min-width: 768px)" srcset="assets/slider-50.png">
+          <img src="assets/slider-50.png" style="width:100%">
+        </picture>
+      </div>      
+      <div class="mySlides fade">
+        <picture>
+          <source media="(min-width: 1200px)" srcset="assets/slider-2-100.jfif">
+          <source media="(min-width: 768px)" srcset="assets/slider-2-50.jpg">
+          <img src="assets/slider-2-50.jpg" style="width:100%">
+        </picture>
+      </div>  
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>     
     </div>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span>
+    </div>    
   </div>
+  {{-- transaksi --}}
   <div id="transaksi">
     <div class="container">
       <h3>kemudahan transaksi</h3>
-      <img src="assets/transaksi.png" alt="transaksi">
+      <picture>
+        <source media="(min-width: 1200px)" srcset="assets/transaksi-100.png">
+        <source media="(min-width: 768px)" srcset="assets/transaksi-50.png">
+        <img src="assets/transaksi-50.png" style="width:100%">
+      </picture>
     </div>
   </div>
   <div id="produk">
@@ -89,7 +121,7 @@
       <div class="kiri">
         <h3>blog review</h3>
         <div class="thumbnail">
-          <img src="assets/thumbnail.jpg" alt="image blog">
+          {{-- <img src="assets/thumbnail.jpg" alt="image blog"> --}}
         </div>
         <div class="title">
           <h6>Tips Aman Menyambut Hari Raya Idul Adha di Tengah Pandemi COVID-19</h6>
@@ -104,7 +136,7 @@
       <div class="kanan">
         <div class="kanan-container">
           <div class="thumbnail">
-            <img src="assets/blog-1.jfif" alt="image blog">
+            {{-- <img src="assets/blog-1.jfif" alt="image blog"> --}}
           </div>
           <div class="title">
             <p>Cari Tahu Ukuran Spanduk Yang Cocok Untuk Kebutuhan Mu</p>
@@ -119,7 +151,7 @@
   <div id="why">
     <div class="container">
       <div class="kiri">
-        <img src="assets/thumbnail.jpg" alt="video">
+        {{-- <img src="assets/thumbnail.jpg" alt="video"> --}}
       </div>
       <div class="kanan">
         <div class="kanan-container">
@@ -267,7 +299,7 @@
       </div>
     </div>
     <div class="lokasi">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.2055818734743!2d109.23828971376565!3d-7.44249219463075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655df95d51a6ff%3A0x5886b7e0b08cf2cd!2sHead%20Office%20Abata%20Printing!5e0!3m2!1sid!2sid!4v1668466237482!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.2055818734743!2d109.23828971376565!3d-7.44249219463075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655df95d51a6ff%3A0x5886b7e0b08cf2cd!2sHead%20Office%20Abata%20Printing!5e0!3m2!1sid!2sid!4v1668466237482!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
     </div>
   </div>
   <div id="footer">
@@ -275,5 +307,50 @@
       <p>&copy;2022 Jahaho. All Right Reserved.</p>
     </div>
   </div>
+
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+
+    // slider auto
+    let slideIndexAuto = 0;
+    showSlidesAuto();
+
+    function showSlidesAuto() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndexAuto++;
+      if (slideIndexAuto > slides.length) {slideIndexAuto = 1}
+      slides[slideIndexAuto-1].style.display = "block";
+      setTimeout(showSlidesAuto, 3000); // Change image every 2 seconds
+    }
+  </script>
 </body>
 </html>
