@@ -9,12 +9,12 @@
   <link rel="shortcut icon" href="{{ asset('assets/logo.png') }}" type="image/x-icon">
 
   <!-- css -->
-  <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Anaheim' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css">
   <style>
     body {
-      font-family: 'Abel';font-size: 22px;
+        font-family: 'Anaheim';font-size: 22px;
     }
   </style>
 </head>
@@ -80,48 +80,72 @@
   <div id="produk">
     <div class="container">
       <h3>produk</h3>
-      <div class="title">
-        <div>best seller</div>
-        <div>merchandise</div>
-        <div>stationary</div>
-        <div>promotion</div>
-        <div>billboard</div>
-        <div>other</div>
+      <div id="myBtnContainer" class="title">
+        <button class="btn" onclick="filterSelection('best_seller')">best seller</button>
+        <button class="btn" onclick="filterSelection('merchandise')">merchandise</button>
+        <button class="btn" onclick="filterSelection('stationary')">stationary</button>
+        <button class="btn" onclick="filterSelection('promotion')">promotion</button>
+        <button class="btn" onclick="filterSelection('billboard')">billboard</button>
+        <button class="btn" onclick="filterSelection('other')">Lainnya</button>
       </div>
       <div class="kategori">
-        <div class="col">
+        <div class="col filterDiv best_seller">
           <img src="assets/produk.jfif" alt="produk">
-          <p>Roll Up Banner</p>
+          <p>best seller</p>
         </div>
-        <div class="col">
-          <img src="assets/produk.jfif" alt="produk">
-          <p>Roll Up Banner</p>
+        <div class="col filterDiv best_seller">
+          <img src="assets/produk-6.jfif" alt="produk">
+          <p>best seller</p>
         </div>
-        <div class="col">
-          <img src="assets/produk.jfif" alt="produk">
-          <p>Roll Up Banner</p>
+        <div class="col filterDiv best_seller">
+          <img src="assets/produk-7.jfif" alt="produk">
+          <p>best seller</p>
         </div>
-        <div class="col">
-          <img src="assets/produk.jfif" alt="produk">
-          <p>Roll Up Banner</p>
+        <div class="col filterDiv merchandise">
+          <img src="assets/produk-1.jfif" alt="produk">
+          <p>merchandise</p>
         </div>
-        <div class="col">
-          <img src="assets/produk.jfif" alt="produk">
-          <p>Roll Up Banner</p>
+        <div class="col filterDiv merchandise">
+          <img src="assets/produk-8.jfif" alt="produk">
+          <p>merchandise</p>
         </div>
-        <div class="col">
-          <img src="assets/produk.jfif" alt="produk">
-          <p>Roll Up Banner</p>
+        <div class="col filterDiv stationary">
+          <img src="assets/produk-2.jfif" alt="produk">
+          <p>stationary</p>
+        </div>
+        <div class="col filterDiv stationary">
+          <img src="assets/produk-9.jfif" alt="produk">
+          <p>stationary</p>
+        </div>
+        <div class="col filterDiv stationary">
+          <img src="assets/produk-10.jfif" alt="produk">
+          <p>stationary</p>
+        </div>
+        <div class="col filterDiv stationary">
+          <img src="assets/produk-11.jfif" alt="produk">
+          <p>stationary</p>
+        </div>
+        <div class="col filterDiv promotion">
+          <img src="assets/produk-3.jfif" alt="produk">
+          <p>promotion</p>
+        </div>
+        <div class="col filterDiv billboard">
+          <img src="assets/produk-4.jfif" alt="produk">
+          <p>billboard</p>
+        </div>
+        <div class="col filterDiv other">
+          <img src="assets/produk-5.jfif" alt="produk">
+          <p>other</p>
         </div>
       </div>
     </div>
   </div>
   <div id="blog">
-    <div class="container">
-      <div class="kiri">
-        <h3>blog review</h3>
+    <div class="blog-container">
+      <h3>blog review</h3>
+      <div class="blog-thumbnail">
         <div class="thumbnail">
-          {{-- <img src="assets/thumbnail.jpg" alt="image blog"> --}}
+          <img src="assets/thumbnail.jpg" alt="image blog">
         </div>
         <div class="title">
           <h6>Tips Aman Menyambut Hari Raya Idul Adha di Tengah Pandemi COVID-19</h6>
@@ -133,10 +157,43 @@
           <p>Berdasarkan keputusan Kemenag (Kementrian Agama) dengan diselenggarakan nya sidang isbat untuk penentuan hari raya Idul Adha 1441 H. Dan keputusan dari hasil sidang isbat tersebut, hari raya Idul Adha 1441 H, jatuh pada 10 Dzulhijah 1441 H pada hari Jum’at tanggal 31 Juli 2020 (31/07/2020).</p>
         </div>
       </div>
-      <div class="kanan">
-        <div class="kanan-container">
+      <div class="blog-list">
+        <div class="list">
           <div class="thumbnail">
-            {{-- <img src="assets/blog-1.jfif" alt="image blog"> --}}
+            <img src="assets/blog-1.jfif" alt="image blog">
+          </div>
+          <div class="title">
+            <p>Cari Tahu Ukuran Spanduk Yang Cocok Untuk Kebutuhan Mu</p>
+          </div>
+          <div class="tanggal">
+            <p><i class="fas fa-calendar-alt"></i> 28 Juli 2022</p>
+          </div>
+        </div>
+        <div class="list">
+          <div class="thumbnail">
+            <img src="assets/blog-2.png" alt="image blog">
+          </div>
+          <div class="title">
+            <p>Cari Tahu Ukuran Spanduk Yang Cocok Untuk Kebutuhan Mu</p>
+          </div>
+          <div class="tanggal">
+            <p><i class="fas fa-calendar-alt"></i> 28 Juli 2022</p>
+          </div>
+        </div>
+        <div class="list">
+          <div class="thumbnail">
+            <img src="assets/blog-3.png" alt="image blog">
+          </div>
+          <div class="title">
+            <p>Cari Tahu Ukuran Spanduk Yang Cocok Untuk Kebutuhan Mu</p>
+          </div>
+          <div class="tanggal">
+            <p><i class="fas fa-calendar-alt"></i> 28 Juli 2022</p>
+          </div>
+        </div>
+        <div class="list">
+          <div class="thumbnail">
+            <img src="assets/blog-4.png" alt="image blog">
           </div>
           <div class="title">
             <p>Cari Tahu Ukuran Spanduk Yang Cocok Untuk Kebutuhan Mu</p>
@@ -149,75 +206,74 @@
     </div>
   </div>
   <div id="why">
-    <div class="container">
-      <div class="kiri">
-        {{-- <img src="assets/thumbnail.jpg" alt="video"> --}}
+    <div class="why-container">
+      <h3>why us</h3>
+      <div class="why-thumbnail">
+        <img src="assets/thumbnail.jpg" alt="video">
       </div>
-      <div class="kanan">
-        <div class="kanan-container">
-          <div class="data">
-            <div class="image">
-              <img src="assets/icon.png" alt="icon">
+      <div class="why-list">
+        <div class="list">
+          <div class="image">
+            <img src="assets/icon.png" alt="icon">
+          </div>
+          <div class="deskripsi">
+            <div class="title">
+              <p>cetak cepat - cetak banyak</p>
             </div>
-            <div class="deskripsi">
-              <div class="title">
-                <p>cetak cepat - cetak banyak</p>
-              </div>
-              <div class="keterangan">
-                <p>Bayangkan hanya dalam waktu 1 jam Anda sudah bisa memiliki lebih dari 250 lembar brosur A4</p>
-              </div>
+            <div class="keterangan">
+              <p>Bayangkan hanya dalam waktu 1 jam Anda sudah bisa memiliki lebih dari 250 lembar brosur A4</p>
             </div>
           </div>
-          <div class="data">
-            <div class="image">
-              <img src="assets/icon.png" alt="icon">
+        </div>
+        <div class="list">
+          <div class="image">
+            <img src="assets/icon-2.png" alt="icon">
+          </div>
+          <div class="deskripsi">
+            <div class="title">
+              <p>FULL COLOR</p>
             </div>
-            <div class="deskripsi">
-              <div class="title">
-                <p>cetak cepat - cetak banyak</p>
-              </div>
-              <div class="keterangan">
-                <p>Bayangkan hanya dalam waktu 1 jam Anda sudah bisa memiliki lebih dari 250 lembar brosur A4</p>
-              </div>
+            <div class="keterangan">
+              <p>Umumnya percetakan memiliki 4 warna, kami memiliki 5 warna yang pastinya lebih berwarna</p>
             </div>
           </div>
-          <div class="data">
-            <div class="image">
-              <img src="assets/icon.png" alt="icon">
+        </div>
+        <div class="list">
+          <div class="image">
+            <img src="assets/icon-3.png" alt="icon">
+          </div>
+          <div class="deskripsi">
+            <div class="title">
+              <p>DESAIN SESUAI KEINGINAN</p>
             </div>
-            <div class="deskripsi">
-              <div class="title">
-                <p>cetak cepat - cetak banyak</p>
-              </div>
-              <div class="keterangan">
-                <p>Bayangkan hanya dalam waktu 1 jam Anda sudah bisa memiliki lebih dari 250 lembar brosur A4</p>
-              </div>
+            <div class="keterangan">
+              <p>Kami juga membuatkan desain sesuai keinginan Anda. Akan ada Art Design Team yang akan membantu Anda</p>
             </div>
           </div>
-          <div class="data">
-            <div class="image">
-              <img src="assets/icon.png" alt="icon">
+        </div>
+        <div class="list">
+          <div class="image">
+            <img src="assets/icon-4.png" alt="icon">
+          </div>
+          <div class="deskripsi">
+            <div class="title">
+              <p>FILE KIRIM EMAIL</p>
             </div>
-            <div class="deskripsi">
-              <div class="title">
-                <p>cetak cepat - cetak banyak</p>
-              </div>
-              <div class="keterangan">
-                <p>Bayangkan hanya dalam waktu 1 jam Anda sudah bisa memiliki lebih dari 250 lembar brosur A4</p>
-              </div>
+            <div class="keterangan">
+              <p>File dapat dikirimkan melalui email. Anda akan dihubungi saat proses selesai</p>
             </div>
           </div>
-          <div class="data">
-            <div class="image">
-              <img src="assets/icon.png" alt="icon">
+        </div>
+        <div class="list">
+          <div class="image">
+            <img src="assets/icon-5.png" alt="icon">
+          </div>
+          <div class="deskripsi">
+            <div class="title">
+              <p>LANGSUNG KIRIM DENGAN GO-SEND</p>
             </div>
-            <div class="deskripsi">
-              <div class="title">
-                <p>cetak cepat - cetak banyak</p>
-              </div>
-              <div class="keterangan">
-                <p>Bayangkan hanya dalam waktu 1 jam Anda sudah bisa memiliki lebih dari 250 lembar brosur A4</p>
-              </div>
+            <div class="keterangan">
+              <p>Kemudahan dalam digital membuat kita dapat mendistribusikan di hari yang sama. Ada pula opsi pengiriman ekspedisi inhouse dan online</p>
             </div>
           </div>
         </div>
@@ -309,6 +365,7 @@
   </div>
 
   <script>
+    // slider
     let slideIndex = 1;
     showSlides(slideIndex);
     
@@ -350,6 +407,52 @@
       if (slideIndexAuto > slides.length) {slideIndexAuto = 1}
       slides[slideIndexAuto-1].style.display = "block";
       setTimeout(showSlidesAuto, 3000); // Change image every 2 seconds
+    }
+
+    // produk
+    filterSelection("best_seller");
+    function filterSelection (kategori) {
+      let x, i;
+      x = document.getElementsByClassName("filterDiv");
+      // if (kategori == )
+      for (let i = 0; i < x.length; i++) {
+        produkRemoveClass(x[i], "show");
+        if (x[i].className.indexOf(kategori) > -1) produkAddClass(x[i], "show");
+      }
+    }
+
+    function produkAddClass(element, name) {
+      let i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (let i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {
+          element.className += " " + arr2[i];
+        }
+      }
+    }
+
+    function produkRemoveClass(element, name) {
+      let i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (let i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+
+    // add active class current button
+    let btnContainer = document.getElementById("myBtnContainer");
+    let btns = btnContainer.getElementsByClassName("btn");
+    for (let i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        let current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
     }
   </script>
 </body>
