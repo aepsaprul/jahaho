@@ -1,27 +1,72 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 
-@section('style')
+  <link rel="shortcut icon" href="{{ asset('assets/logo.png') }}" type="image/x-icon">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-
-@endsection
-
-@section('content')
-<div class="content">
-  {{-- slider --}}
-  <div id="slider">
-    <!-- Swiper -->
-    <div class="swiper sliderSwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="assets/slider-50.png" style="width:100%">
-        </div>
-        <div class="swiper-slide">
-          <img src="assets/slider-2-50.jpg" style="width:100%">
+  <!-- css -->
+  <link href='https://fonts.googleapis.com/css?family=Anaheim' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Anaheim';font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+  
+  {{-- header --}}
+  <div id="header">
+    <div class="container">
+      <div class="logo">
+        <div class="logo-image"><img src="assets/logo.png" alt="logo"></div>
+        <div class="logo-detail">
+          <div class="logo-title">jade indopratama</div>
+          <div class="logo-teks">Lebih berwarna, berwarna lebih lama</div>
         </div>
       </div>
-      <div class="swiper-pagination"></div>
-    </div>   
+      <div class="navigasi">
+        <div class="navigasi-burger"><i class="fas fa-bars"></i></div>
+        <div class="navigasi-main">
+          <div>home</div>
+          <div>produk</div>
+          <div>order cetak</div>
+          <div>cara pemesanan</div>
+          <div>company profile</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{-- slider --}}
+  <div id="slider">
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <picture>
+          <source media="(min-width: 1200px)" srcset="assets/100%.jfif">
+          <source media="(min-width: 768px)" srcset="assets/slider-50.png">
+          <img src="assets/slider-50.png" style="width:100%">
+        </picture>
+      </div>      
+      <div class="mySlides fade">
+        <picture>
+          <source media="(min-width: 1200px)" srcset="assets/slider-2-100.jfif">
+          <source media="(min-width: 768px)" srcset="assets/slider-2-50.jpg">
+          <img src="assets/slider-2-50.jpg" style="width:100%">
+        </picture>
+      </div>  
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>     
+    </div>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span>
+    </div>    
   </div>
 
   {{-- transaksi --}}
@@ -171,7 +216,7 @@
   {{-- why --}}
   <div id="why">
     <div class="why-container">
-      <h3>kenapa memilih kami?</h3>
+      <h3>why us</h3>
       <div class="why-thumbnail">
         <img src="assets/thumbnail.jpg" alt="video">
       </div>
@@ -244,33 +289,7 @@
       </div>
     </div>
   </div>
-  <div id="fasilitas">
-    <h3>Fasilitas Produksi</h3>
-    <!-- Swiper -->
-    <div class="swiper fasilitasSwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="{{ asset('assets/fasilitas-1.jpg') }}" alt="fasilitas">
-        </div>
-        <div class="swiper-slide">
-          <img src="{{ asset('assets/fasilitas-2.jpg') }}" alt="fasilitas">
-        </div>
-        <div class="swiper-slide">
-          <img src="{{ asset('assets/fasilitas-3.jpg') }}" alt="fasilitas">
-        </div>
-        <div class="swiper-slide">
-          <img src="{{ asset('assets/fasilitas-4.jpg') }}" alt="fasilitas">
-        </div>
-        <div class="swiper-slide">
-          <img src="{{ asset('assets/fasilitas-5.jpg') }}" alt="fasilitas">
-        </div>
-        <div class="swiper-slide">
-          <img src="{{ asset('assets/fasilitas-6.jpg') }}" alt="fasilitas">
-        </div>
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
+  <div id="fasilitas"></div>
   <div id="partner">
     <div class="container">
       <h3>corporate partner</h3>
@@ -348,99 +367,102 @@
       {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.2055818734743!2d109.23828971376565!3d-7.44249219463075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655df95d51a6ff%3A0x5886b7e0b08cf2cd!2sHead%20Office%20Abata%20Printing!5e0!3m2!1sid!2sid!4v1668466237482!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
     </div>
   </div>
-</div>
-@endsection
+  <div id="footer">
+    <div class="container">
+      <p>&copy;2022 Jahaho. All Right Reserved.</p>
+    </div>
+  </div>
 
-@section('script')
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-
-<script>
-  // slider swiper
-  var swiper = new Swiper(".sliderSwiper", {
-    pagination: {
-      el: ".swiper-pagination",
-    },
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    loop: true
-  });
-
-  // fasilitas
-  var swiper = new Swiper(".fasilitasSwiper", {
-    slidesPerView: 1,
-    breakpoints: {
-      600: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      760: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      },
-      1200: {
-        slidesPerView: 4,
-        spaceBetween: 50,
-      },
-    },
-    spaceBetween: 30,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    loop: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false
+  <script>
+    // slider
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
     }
-  });
-  
-  // produk
-  filterSelection("best_seller");
-  function filterSelection (kategori) {
-    let x, i;
-    x = document.getElementsByClassName("filterDiv");
-    // if (kategori == )
-    for (let i = 0; i < x.length; i++) {
-      produkRemoveClass(x[i], "show");
-      if (x[i].className.indexOf(kategori) > -1) produkAddClass(x[i], "show");
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
     }
-  }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
 
-  function produkAddClass(element, name) {
-    let i, arr1, arr2;
-    arr1 = element.className.split(" ");
-    arr2 = name.split(" ");
-    for (let i = 0; i < arr2.length; i++) {
-      if (arr1.indexOf(arr2[i]) == -1) {
-        element.className += " " + arr2[i];
+    // slider auto
+    let slideIndexAuto = 0;
+    showSlidesAuto();
+
+    function showSlidesAuto() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndexAuto++;
+      if (slideIndexAuto > slides.length) {slideIndexAuto = 1}
+      slides[slideIndexAuto-1].style.display = "block";
+      setTimeout(showSlidesAuto, 3000); // Change image every 2 seconds
+    }
+
+    // produk
+    filterSelection("best_seller");
+    function filterSelection (kategori) {
+      let x, i;
+      x = document.getElementsByClassName("filterDiv");
+      // if (kategori == )
+      for (let i = 0; i < x.length; i++) {
+        produkRemoveClass(x[i], "show");
+        if (x[i].className.indexOf(kategori) > -1) produkAddClass(x[i], "show");
       }
     }
-  }
 
-  function produkRemoveClass(element, name) {
-    let i, arr1, arr2;
-    arr1 = element.className.split(" ");
-    arr2 = name.split(" ");
-    for (let i = 0; i < arr2.length; i++) {
-      while (arr1.indexOf(arr2[i]) > -1) {
-        arr1.splice(arr1.indexOf(arr2[i]), 1);
+    function produkAddClass(element, name) {
+      let i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (let i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {
+          element.className += " " + arr2[i];
+        }
       }
     }
-    element.className = arr1.join(" ");
-  }
 
-  // add active class current button
-  let btnContainer = document.getElementById("myBtnContainer");
-  let btns = btnContainer.getElementsByClassName("btn");
-  for (let i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function () {
-      let current = document.getElementsByClassName("active");
-      current[0].className = current[0].className.replace(" active", "");
-      this.className += " active";
-    });
-  }
-</script>
-@endsection
+    function produkRemoveClass(element, name) {
+      let i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (let i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+
+    // add active class current button
+    let btnContainer = document.getElementById("myBtnContainer");
+    let btns = btnContainer.getElementsByClassName("btn");
+    for (let i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        let current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+  </script>
+</body>
+</html>
