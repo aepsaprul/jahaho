@@ -244,6 +244,8 @@
       </div>
     </div>
   </div>
+
+  {{-- fasilitas --}}
   <div id="fasilitas">
     <h3>Fasilitas Produksi</h3>
     <!-- Swiper -->
@@ -271,83 +273,59 @@
       <div class="swiper-pagination"></div>
     </div>
   </div>
+
+  {{-- partner --}}
   <div id="partner">
     <div class="container">
       <h3>corporate partner</h3>
-      <div class="kiri">
-        <div class="navigasi">
-          <div class="list">Hotel</div>
-          <div class="list">Kosmetik</div>
-          <div class="list">Manufakturing</div>
-          <div class="list">Pariwisata</div>
-          <div class="list">Perbankan</div>
-          <div class="list">Property</div>
-          <div class="list">Provider & Elektronik</div>
-          <div class="list">Rokok</div>
-          <div class="list">Transportasi</div>
+      <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'Hotel')" id="defaultOpen">Hotel</button>
+        <button class="tablinks" onclick="openCity(event, 'Kosmetik')">Kosmetik</button>
+        <button class="tablinks" onclick="openCity(event, 'Bank')">Bank</button>
+      </div>      
+      <div id="Hotel" class="tabcontent">
+        <div class="tabcontent-list">
+          <div>
+            <img src="{{ asset('assets/hotel.png') }}" alt="partner">
+          </div>
+          <div>
+            <img src="{{ asset('assets/hotel-2.jpg') }}" alt="partner">
+          </div>
+          <div>
+            <img src="{{ asset('assets/hotel-3.jfif') }}" alt="partner">
+          </div>
         </div>
-      </div>
-      <div class="kanan">
-        <h4>Hotel</h4>
-        <div class="data">
-          <div class="col">
-            <div class="thumbnail">
-              <img src="assets/hotel.png" alt="image partner">
-            </div>
+      </div>      
+      <div id="Kosmetik" class="tabcontent">
+        <div class="tabcontent-list">
+          <div>
+            <img src="{{ asset('assets/kosmetik-1.png') }}" alt="partner">
           </div>
-          <div class="col">
-            <div class="thumbnail">
-              <img src="assets/hotel.png" alt="image partner">
-            </div>
+          <div>
+            <img src="{{ asset('assets/kosmetik-2.png') }}" alt="partner">
           </div>
-          <div class="col">
-            <div class="thumbnail">
-              <img src="assets/hotel.png" alt="image partner">
-            </div>
+          <div>
+            <img src="{{ asset('assets/kosmetik-3.jfif') }}" alt="partner">
           </div>
-          <div class="col">
-            <div class="thumbnail">
-              <img src="assets/hotel.png" alt="image partner">
-            </div>
+        </div>
+      </div>      
+      <div id="Bank" class="tabcontent">
+        <div class="tabcontent-list">
+          <div>
+            <img src="{{ asset('assets/bank-1.png') }}" alt="partner">
+          </div>
+          <div>
+            <img src="{{ asset('assets/bank-2.png') }}" alt="partner">
+          </div>
+          <div>
+            <img src="{{ asset('assets/bank-3.png') }}" alt="partner">
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div id="sitemap">
-    <div class="perusahaan">
-      <p><a href="#">tentang kami</a></p>
-      <p><a href="#">kebijakan hak cipta</a></p>
-      <p><a href="#">privacy policy</a></p>
-      <p><a href="#">corporate partner</a></p>
-      <p><a href="#">fasilitas produksi</a></p>
-      <p><a href="#">blog kami</a></p>
-    </div>
-    <div class="bantuan">
-      <p><a href="#">cara pemesanan</a></p>
-      <p><a href="#">berkarir di jahaho</a></p>
-      <p><a href="#">FAQ</a></p>
-    </div>
-    <div class="kontak">
-      <h6>cv. jahaho</h6>
-      <div>
-        <p>NPWP: 01.991.344.1.652.000</p>
-        <p>Email: jahaho@gmail.com</p>
-        <p>Phone: (0341) 470150</p>
-        <p>WhatsApp: 081 555 800000</p>
-      </div>
-      <div>
-        <div>Jam Operasional:</div>
-        <div>(Senin – Jumat, 9:00 sampai 20:00)</div>
-      </div>
-      <div>
-        <p>Jl. R. Tumenggung Suryo No.35, Purwantoro, Kec. Blimbing, Kota Malang, Jawa Timur 65126</p>
-      </div>
-    </div>
-    <div class="lokasi">
-      {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.2055818734743!2d109.23828971376565!3d-7.44249219463075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655df95d51a6ff%3A0x5886b7e0b08cf2cd!2sHead%20Office%20Abata%20Printing!5e0!3m2!1sid!2sid!4v1668466237482!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
-    </div>
-  </div>
+
+  <div style="clear: both;"></div>
 </div>
 @endsection
 
@@ -366,35 +344,6 @@
       disableOnInteraction: false,
     },
     loop: true
-  });
-
-  // fasilitas
-  var swiper = new Swiper(".fasilitasSwiper", {
-    slidesPerView: 1,
-    breakpoints: {
-      600: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      760: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      },
-      1200: {
-        slidesPerView: 4,
-        spaceBetween: 50,
-      },
-    },
-    spaceBetween: 30,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    loop: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false
-    }
   });
   
   // produk
@@ -442,5 +391,52 @@
       this.className += " active";
     });
   }
+
+  // fasilitas
+  var swiper = new Swiper(".fasilitasSwiper", {
+    slidesPerView: 1,
+    breakpoints: {
+      600: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      760: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 50,
+      },
+    },
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    }
+  });
+
+  // partner
+  function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
 </script>
 @endsection

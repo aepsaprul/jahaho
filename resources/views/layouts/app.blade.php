@@ -13,8 +13,29 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Anaheim';font-size: 22px;
+    }
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: lightblue;
+      color: lightyellow;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 4px;
+    }
+    #myBtn:hover {
+      background-color: lightblue;
     }
   </style>
 
@@ -49,11 +70,72 @@
 
     {{-- footer --}}
     <div id="footer">
+      {{-- sitemap --}}
+      <div class="sitemap">
+        <div class="perusahaan">
+          <h4>perusahaan</h4>
+          <p><a href="#">Tentang Kami</a></p>
+          <p><a href="#">Kebijakan Hak Cipta</a></p>
+          <p><a href="#">Privacy Policy</a></p>
+          <p><a href="#">Corporate Partner</a></p>
+          <p><a href="#">Fasilitas Produksi</a></p>
+          <p><a href="#">Blog Kami</a></p>
+        </div>
+        <div class="bantuan">
+          <h4>bantuan</h4>
+          <p><a href="#">Cara Pemesanan</a></p>
+          <p><a href="#">Berkarir Di Jahaho</a></p>
+          <p><a href="#">FAQ</a></p>
+        </div>
+        <div class="hubungi-kami">
+          <h4>hubungi kami</h4>
+          <p style="text-transform: uppercase; font-weight: bold; font-size: 1.5rem;">cv. jahaho</p>
+          <div>
+            <p><span style="font-weight: bold;">NPWP:</span> 01.991.344.1.652.000</p>
+            <p><span style="font-weight: bold;">Email:</span> jahaho@gmail.com</p>
+            <p><span style="font-weight: bold;">Phone:</span> (0341) 470150</p>
+            <p><span style="font-weight: bold;">WhatsApp:</span> 081 555 800000</p>
+          </div>
+          <div style="margin-top: 20px">
+            <p style="font-weight: bold;">Jam Operasional:</p>
+            <p>(Senin – Jumat, 9:00 sampai 20:00)</p>
+          </div>
+          <div style="margin-top: 20px;">
+            <p>Jl. R. Tumenggung Suryo No.35, Purwantoro, Kec. Blimbing, Kota Malang, Jawa Timur 65126</p>
+          </div>
+        </div>
+        <div class="lokasi">
+          <h4>lokasi kami</h4>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.2055818734743!2d109.23828971376565!3d-7.44249219463075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655df95d51a6ff%3A0x5886b7e0b08cf2cd!2sHead%20Office%20Abata%20Printing!5e0!3m2!1sid!2sid!4v1668466237482!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
       <div class="container">
-        <p>&copy;2022 Jahaho. All Right Reserved.</p>
+        <p>&copy;2022 Jahaho. Hak Cipta Dilindungi.</p>
       </div>
     </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
   </div>
+
+  <script>
+    // back to top
+    let mybutton = document.getElementById("myBtn");    
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
 
   @yield('script')
 </body>
