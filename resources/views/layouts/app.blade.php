@@ -54,8 +54,8 @@
           </div>
         </div>
         <div class="navigasi">
-          <div class="navigasi-burger"><i class="fas fa-bars"></i></div>
-          <div class="navigasi-main">
+          <div class="navigasi-burger" onclick="navigasiBurger()"><i class="fas fa-bars"></i></div>
+          <div id="navigasi_main" class="navigasi-main">
             <div>home</div>
             <div>produk</div>
             <div>order cetak</div>
@@ -119,9 +119,36 @@
   </div>
 
   <script>
+    window.onscroll = function() {
+      myFunction();
+      scrollFunction();
+    };
+
+    // navigas burger
+    function navigasiBurger() {
+      let navigasi_main = document.getElementById("navigasi_main");
+      if (navigasi_main.className == "navigasi-main") {
+        navigasi_main.className = "navigasi-main-show";
+      } else {
+        navigasi_main.className = "navigasi-main";
+      }
+      console.log(navigasi_main.className);
+    }
+    
+    // header sticky
+    var header = document.getElementById("header");
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        header.classList.add("sticky")
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+
     // back to top
-    let mybutton = document.getElementById("myBtn");    
-    window.onscroll = function() {scrollFunction()};
+    let mybutton = document.getElementById("myBtn");
     
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {

@@ -3,6 +3,7 @@
   --kuning: #FFDD00;
   --abu: #a0a0a0;
   --fontfamily: Arial, Helvetica, sans-serif;
+  --putihori: #fff;
   --putih: #f1f1f1;
   --abuterang: lightgray;
   --merah: #EE4B2B;
@@ -14,18 +15,30 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 a {
   text-decoration: none;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+.sticky + .content {
+  padding-top: 60px;
 }
 
 /* header */
 #header {
   border-bottom: 3px solid skyblue;
   padding-bottom: 10px;
+  background-color: var(--putihori);
+  overflow: hidden;
+  z-index: 2;
 }
 #header .container {
   display: flex;
+  width: 100%;
 }
 
 /* header - logo */
@@ -68,6 +81,20 @@ a {
 }
 #header .container .navigasi .navigasi-main {
   display: none;
+}
+#header .container .navigasi .navigasi-main-show {
+  display: block;
+  position: fixed;
+  margin-top: 70px;
+  background-color: var(--putihori);
+  width: 100%;
+  text-transform: capitalize;
+}
+#header .container .navigasi .navigasi-main-show div {
+  padding: 5px 10px;
+}
+#header .container .navigasi .navigasi-main-show div:hover {
+  background-color: var(--abuterang);
 }
 
 /* slider */
