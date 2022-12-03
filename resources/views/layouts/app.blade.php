@@ -89,7 +89,7 @@
         </div>
         <div class="hubungi-kami">
           <h4>hubungi kami</h4>
-          <p style="text-transform: uppercase; font-weight: bold; font-size: 1.5rem;">cv. jahaho</p>
+          <p>cv. jahaho</p>
           <div>
             <p><span style="font-weight: bold;">NPWP:</span> 01.991.344.1.652.000</p>
             <p><span style="font-weight: bold;">Email:</span> jahaho@gmail.com</p>

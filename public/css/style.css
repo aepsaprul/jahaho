@@ -85,7 +85,7 @@ a {
 #header .container .navigasi .navigasi-main-show {
   display: block;
   position: fixed;
-  margin-top: 70px;
+  margin-top: 72px;
   background-color: var(--putihori);
   width: 100%;
   text-transform: capitalize;
@@ -413,6 +413,11 @@ a {
   padding: 3px 0;
   font-size: 1.2rem;
 }
+#footer .sitemap .hubungi-kami > p {
+  text-transform: uppercase; 
+  font-weight: bold; 
+  font-size: 1.5rem;
+}
 #footer .sitemap iframe {
   width: 100%;
   height: 250px;
@@ -423,7 +428,6 @@ a {
   font-size: 1rem;
 }
 
-
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   
@@ -431,7 +435,17 @@ a {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-
+  /* footer */
+  #footer .sitemap {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
+  }
+  #footer .sitemap > div {
+    width: 350px;
+    margin: 0;
+    padding: 10px;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -441,7 +455,27 @@ a {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-
+  /* footer */
+  #footer .sitemap {
+    grid-template-columns: auto auto auto auto;
+  }
+  #footer .sitemap h4 {
+    font-size: 1rem;
+    text-align: left;
+    padding: 10px 0;
+  }
+  #footer .sitemap > div {
+    width: 300px;
+    margin: 0;
+    padding: 10px;
+  }
+  #footer .sitemap > div p {
+    font-size: 1rem;
+  }
+  #footer .sitemap .hubungi-kami > p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
