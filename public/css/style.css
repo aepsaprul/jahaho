@@ -1,5 +1,6 @@
 :root {
   --biru: #176BB3;
+  --birugelap: #00008b;
   --kuning: #FFDD00;
   --abu: #a0a0a0;
   --fontfamily: Arial, Helvetica, sans-serif;
@@ -14,6 +15,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Roboto';font-size: 22px;
 }
 a {
   text-decoration: none;
@@ -139,6 +146,9 @@ a {
   text-align: center;
   margin-bottom: 30px;
   text-transform: capitalize;
+}
+#transaksi .container img {
+  width: 100%;
 }
 
 /* produk */
@@ -435,6 +445,22 @@ a {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  /* produk */
+  #produk #myBtnContainer {
+    justify-content: center;
+  }
+  #produk .kategori {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  #produk .filterDiv {
+    width: 100%;
+  }
+  #produk .kategori .col img {
+    width: 100%;
+    padding: 10px;
+  }
+
   /* footer */
   #footer .sitemap {
     display: grid;
@@ -450,11 +476,69 @@ a {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-
+  /* produk */
+  #produk .kategori {
+    grid-template-columns: auto auto auto;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  /* header */
+  #header .container,
+  #content #transaksi,
+  #content #produk,
+  #content #blog,
+  #content #why,
+  #content #fasilitas,
+  #content #partner {
+    width: 80%;
+    margin: auto;
+  }
+
+  /* navigasi */
+  #header .container .logo {
+    width: 40%;
+  }
+  #header .container .navigasi {
+    width: 100%;
+  }
+  #header .container .navigasi .navigasi-burger {
+    display: none;
+  }
+  #header .container .navigasi .navigasi-main {
+    display: flex;
+    flex-direction: row;
+  }
+  #header .container .navigasi .navigasi-main > div {
+    padding: 20px;
+  }
+  #header .container .navigasi .navigasi-main a {
+    text-transform: capitalize;
+    color: var(--biru);
+    text-shadow: 0px 1px var(--birugelap);
+    font-size: 1rem;
+  }
+  #header .container .navigasi .navigasi-main a:hover {
+    color: var(--birugelap);
+  }
+
+  /* transaksi */
+  #transaksi .container {
+    text-align: center;
+  }
+  #transaksi .container img {
+    width: 80%;
+  }
+
+  /* produk */
+  #produk .kategori {
+    grid-template-columns: auto auto auto auto;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
   /* footer */
   #footer .sitemap {
     grid-template-columns: auto auto auto auto;
@@ -476,9 +560,4 @@ a {
     font-size: 1rem;
     margin-bottom: 10px;
   }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  
 }

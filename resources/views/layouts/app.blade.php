@@ -9,16 +9,10 @@
   <link rel="shortcut icon" href="{{ asset('assets/logo.png') }}" type="image/x-icon">
 
   <!-- css -->
-  <link href='https://fonts.googleapis.com/css?family=Anaheim' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css">
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Anaheim';font-size: 22px;
-    }
     #myBtn {
       display: none;
       position: fixed;
@@ -56,11 +50,11 @@
         <div class="navigasi">
           <div class="navigasi-burger" onclick="navigasiBurger()"><i class="fas fa-bars"></i></div>
           <div id="navigasi_main" class="navigasi-main">
-            <div>home</div>
-            <div>produk</div>
-            <div>order cetak</div>
-            <div>cara pemesanan</div>
-            <div>company profile</div>
+            <div><a href="#">home</a></div>
+            <div><a href="#">produk</a></div>
+            <div><a href="#">order cetak</a></div>
+            <div><a href="#">cara pemesanan</a></div>
+            <div><a href="#">company profile</a></div>
           </div>
         </div>
       </div>

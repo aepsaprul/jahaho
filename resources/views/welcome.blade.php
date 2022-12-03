@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<div class="content">
+<div id="content">
   {{-- slider --}}
   <div id="slider">
     <!-- Swiper -->
@@ -31,7 +31,7 @@
       <picture>
         <source media="(min-width: 1200px)" srcset="assets/transaksi-100.png">
         <source media="(min-width: 768px)" srcset="assets/transaksi-50.png">
-        <img src="assets/transaksi-50.png" style="width:100%">
+        <img src="assets/transaksi-50.png">
       </picture>
     </div>
   </div>
@@ -58,8 +58,20 @@
           <p>best seller</p>
         </div>
         <div class="col filterDiv best_seller">
-          <img src="assets/produk-7.jfif" alt="produk">
+          <img src="assets/produk.jfif" alt="produk">
           <p>best seller</p>
+        </div>
+        <div class="col filterDiv best_seller">
+          <img src="assets/produk-6.jfif" alt="produk">
+          <p>best seller</p>
+        </div>
+        <div class="col filterDiv merchandise">
+          <img src="assets/produk-1.jfif" alt="produk">
+          <p>merchandise</p>
+        </div>
+        <div class="col filterDiv merchandise">
+          <img src="assets/produk-8.jfif" alt="produk">
+          <p>merchandise</p>
         </div>
         <div class="col filterDiv merchandise">
           <img src="assets/produk-1.jfif" alt="produk">
@@ -82,6 +94,22 @@
           <p>stationary</p>
         </div>
         <div class="col filterDiv stationary">
+          <img src="assets/produk-9.jfif" alt="produk">
+          <p>stationary</p>
+        </div>
+        <div class="col filterDiv stationary">
+          <img src="assets/produk-10.jfif" alt="produk">
+          <p>stationary</p>
+        </div>
+        <div class="col filterDiv promotion">
+          <img src="assets/produk-11.jfif" alt="produk">
+          <p>stationary</p>
+        </div>
+        <div class="col filterDiv promotion">
+          <img src="assets/produk-3.jfif" alt="produk">
+          <p>promotion</p>
+        </div>
+        <div class="col filterDiv promotion">
           <img src="assets/produk-11.jfif" alt="produk">
           <p>stationary</p>
         </div>
@@ -93,9 +121,33 @@
           <img src="assets/produk-4.jfif" alt="produk">
           <p>billboard</p>
         </div>
-        <div class="col filterDiv other">
+        <div class="col filterDiv billboard">
           <img src="assets/produk-5.jfif" alt="produk">
           <p>other</p>
+        </div>
+        <div class="col filterDiv billboard">
+          <img src="assets/produk-4.jfif" alt="produk">
+          <p>billboard</p>
+        </div>
+        <div class="col filterDiv billboard">
+          <img src="assets/produk-5.jfif" alt="produk">
+          <p>other</p>
+        </div>
+        <div class="col filterDiv other">
+          <img src="assets/produk-7.jfif" alt="produk">
+          <p>best seller</p>
+        </div>
+        <div class="col filterDiv other">
+          <img src="assets/produk-7.jfif" alt="produk">
+          <p>best seller</p>
+        </div>
+        <div class="col filterDiv other">
+          <img src="assets/produk-7.jfif" alt="produk">
+          <p>best seller</p>
+        </div>
+        <div class="col filterDiv other">
+          <img src="assets/produk-7.jfif" alt="produk">
+          <p>best seller</p>
         </div>
       </div>
     </div>
