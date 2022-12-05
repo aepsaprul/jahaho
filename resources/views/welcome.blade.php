@@ -155,8 +155,8 @@
 
   {{-- blog --}}
   <div id="blog">
+    <h3>blog review</h3>
     <div class="blog-container">
-      <h3>blog review</h3>
       <div class="blog-thumbnail">
         <div class="thumbnail">
           <img src="assets/thumbnail.jpg" alt="image blog">
@@ -216,14 +216,36 @@
             <p><i class="fas fa-calendar-alt"></i> 28 Juli 2022</p>
           </div>
         </div>
+        <div class="list">
+          <div class="thumbnail">
+            <img src="assets/blog-4.png" alt="image blog">
+          </div>
+          <div class="title">
+            <p>Cari Tahu Ukuran Spanduk Yang Cocok Untuk Kebutuhan Mu</p>
+          </div>
+          <div class="tanggal">
+            <p><i class="fas fa-calendar-alt"></i> 28 Juli 2022</p>
+          </div>
+        </div>
+        <div class="list">
+          <div class="thumbnail">
+            <img src="assets/blog-4.png" alt="image blog">
+          </div>
+          <div class="title">
+            <p>Cari Tahu Ukuran Spanduk Yang Cocok Untuk Kebutuhan Mu</p>
+          </div>
+          <div class="tanggal">
+            <p><i class="fas fa-calendar-alt"></i> 28 Juli 2022</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   {{-- why --}}
   <div id="why">
+    <h3>kenapa memilih kami?</h3>
     <div class="why-container">
-      <h3>kenapa memilih kami?</h3>
       <div class="why-thumbnail">
         <img src="assets/thumbnail.jpg" alt="video">
       </div>
