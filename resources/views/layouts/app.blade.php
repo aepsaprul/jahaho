@@ -49,8 +49,8 @@
         <div class="navigasi">
           <div class="navigasi-burger" onclick="navigasiBurger()"><i class="fas fa-bars"></i></div>
           <div id="navigasi_main" class="navigasi-main">
-            <div><a href="#">home</a></div>
-            <div><a href="#">produk</a></div>
+            <div><a href="{{ url('/') }}">home</a></div>
+            <div><a href="{{ route('produk') }}">produk</a></div>
             <div><a href="#">order cetak</a></div>
             <div><a href="#">cara pemesanan</a></div>
             <div><a href="#">company profile</a></div>

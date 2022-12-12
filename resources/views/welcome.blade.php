@@ -41,7 +41,7 @@
     <div class="container">
       <h3>produk</h3>
       <div id="myBtnContainer" class="title">
-        <button class="btn" onclick="filterSelection('best_seller')">best seller</button>
+        <button class="btn active" onclick="filterSelection('best_seller')">best seller</button>
         <button class="btn" onclick="filterSelection('merchandise')">merchandise</button>
         <button class="btn" onclick="filterSelection('stationary')">stationary</button>
         <button class="btn" onclick="filterSelection('promotion')">promotion</button>
